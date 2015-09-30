@@ -3,13 +3,7 @@
   :resource-paths #{"src" "test"}
   :wagons '[[s3-wagon-private "1.1.2"]]
   :repositories [["clojars" "http://clojars.org/repo/"]
-                 ["maven-central" "http://repo1.maven.org/maven2/"]
-                 ["releases" {:url      "http://archiva:8080/repository/internal"
-                              :username (System/getenv "ARCHIVA_USERNAME")
-                              :password (System/getenv "ARCHIVA_PASSWORD")}]
-                 ["my.datomic.com" {:url      "https://my.datomic.com/repo"
-                                    :username (System/getenv "DATOMIC_USERNAME")
-                                    :password (System/getenv "DATOMIC_PASSWORD")}]]
+                 ["maven-central" "http://repo1.maven.org/maven2/"]]
   :dependencies '[[adzerk/boot-cljs "0.0-3308-0" :scope "test"]
                   [adzerk/boot-cljs-repl "0.1.9" :scope "test"]
                   [adzerk/boot-reload "0.3.1" :scope "test"]
@@ -37,18 +31,7 @@
          (comp
            (asset-paths :asset-paths #{"html" "styles" "bower_components"})
            (serve :dir "target/")
-           #_(from-cljsjs)
            (watch)
-           #_(checkout :dependencies [['allgress/cereus "0.9.4"]
-                                    ['freactive "0.3.0-SNAPSHOT"]])
            (speak)
            (reload)
-           #_(cljs-repl)
-           (cljs)))
-
-(deftask cljs-content
-         ""
-         []
-         (comp
-           (asset-paths :asset-paths #{"html" "styles" "bower_components"})
-           (cljs-build)))
+           (cljs :compiler-options {:compiler-stats true})))
