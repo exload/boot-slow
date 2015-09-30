@@ -9,7 +9,7 @@
                   [adzerk/boot-reload "0.3.1" :scope "test"]
                   [pandeiro/boot-http "0.6.2" :scope "test"]
                   [cljsjs/boot-cljsjs "0.5.0" :scope "test"]
-                  [allgress/boot-tasks "0.2.2" :scope "test"]])
+                  [allgress/boot-tasks "0.2.3" :scope "test"]])
 
 (require
   '[adzerk.boot-cljs :refer :all]
