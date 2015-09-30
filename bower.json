@@ -1,0 +1,19 @@
+{
+  "name": "cereus-sandbox",
+  "version": "0.0.0",
+  "authors": [
+    "Kenny Williams <kennyjwilli@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.1",
+    "material-design-iconic-font": "zavoloklom/material-design-iconic-font#~2.1.2"
+  }
+}
