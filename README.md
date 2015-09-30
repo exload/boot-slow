@@ -2,7 +2,7 @@
 
 ## Deps
 
-- (Boot tasks)[git@github.com:allgress/boot-tasks.git] clone from develop branch and run `boot build`
+- [Boot tasks](https://github.com/allgress/boot-tasks) clone from develop branch and run `boot build`
 
 ## To demo
 
